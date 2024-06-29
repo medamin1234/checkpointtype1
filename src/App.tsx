@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+//DEFINE INTERFACE
+interface Vehicle {
+  make:string;
+  model:string;
+  year:number;
+  start:()=>void;
+}
+//IMPLEM CLASS
+class Car implements Vehicle {
+  make: string;
+  model: string;
+  year: number;
+
+  constructor(make: string, model: string, year: number) {
+   this.make=make
+   this.model=model
+   this.year=year
+  }
+  start =(): void=>{
+console.log("Car engine started")
+  } 
+}
+
+const App = ()=> {
+//Create instance 
+const mycar = new Car("Audi","e-tron gt",2021)
+console.log(mycar)
+
+//Run engine func
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <></>
   );
 }
 
